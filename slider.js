@@ -1,13 +1,15 @@
 const allSlides = document.querySelectorAll(".awo-review-slide");
 
-// we have 3 slides. each one needs assigning a number
-
 let currentSlide = 0;
 let maxValue = allSlides.length;
 
-// on click current slide =+ 1;
 const next = document.querySelector("#next");
 const prev = document.querySelector("#prev");
+const addSlide = document.querySelector("#add-slide");
+
+if (currentSlide == 0){
+    prev.style.display = "none";
+}
 
 next.addEventListener("click", () => {
   if (currentSlide < maxValue - 1) {
@@ -15,7 +17,11 @@ next.addEventListener("click", () => {
     currentSlide++;
     allSlides[currentSlide].classList.add('current');
     console.log(currentSlide);
+    prev.style.display = "block";
   }
+  if (currentSlide == maxValue -1){
+    next.style.display = "none";
+}
 });
 
 prev.addEventListener("click", () => {
@@ -25,5 +31,9 @@ prev.addEventListener("click", () => {
     console.log(currentSlide);
     allSlides[currentSlide].classList.add('current');
   }
-
+  if (currentSlide == 0){
+    prev.style.display = "none";
+    next.style.display = "block";
+}
 });
+

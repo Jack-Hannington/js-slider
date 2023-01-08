@@ -1,13 +1,49 @@
 * {
     outline: 1px solid red;
   }
+body {
+    height:2000px;
+}
+button {
+    border:none;
+    padding:8px 16px;
+    border-radius:50px;
+    height:40px;
+    width:40px;
+    position:absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#next {
+    left:100%;
+    transform: translate(-50%, -50%);
+}
+
+#prev {
+    left:0px;
+    transform: translate(-50%, -50%);
+
+}
+
+button:hover {
+    cursor:pointer;
+}
   
-  .awo-reviews-slider {
+.awo-reviews-slider {
     width:400px;
     height:300px;
     margin:auto;
     position: relative;
-  }
+    max-width: 100%;
+}
+
+@media (max-width:500px){
+    .awo-reviews-slider {
+        margin:20px;
+}
+}
   
   
 
@@ -25,11 +61,21 @@
     position: absolute;
     opacity: 0;
     transition: opacity 0.5s, transform 0.5s;
-    transform: translateX(-100%);
+    transform: translateX(-100%)
   }
   
   .awo-review-slide.current {
     opacity: 1;
     transform: translateX(0);
   }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #FF0000;
+  }
+  
   
