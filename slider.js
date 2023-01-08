@@ -37,3 +37,30 @@ prev.addEventListener("click", () => {
 }
 });
 
+
+// Touch support
+
+let startX;
+let endX;
+
+allSlides.forEach((slide) => {
+  slide.addEventListener("touchstart", (event) => {
+    startX = event.touches[0].clientX;
+  });
+
+  slide.addEventListener("touchmove", (event) => {
+    endX = event.touches[0].clientX;
+  });
+
+  slide.addEventListener("touchend", (event) => {
+    const threshold = 50;
+    const swipeDistance = endX - startX;
+
+    if (swipeDistance > threshold) {
+      prev.click();
+    } else if (swipeDistance < -threshold) {
+      next.click();
+    }
+  });
+});
+
