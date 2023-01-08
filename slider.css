@@ -82,6 +82,11 @@ button:hover {
     transition: opacity 0.5s, transform 0.5s;
     transform: translateX(100%)
   }
+
+  .awo-review-slide:nth-of-type(even){
+      background: rgb(10, 99, 64);
+      color:white;
+  }
   
   .awo-review-slide.current {
     opacity: 1;
