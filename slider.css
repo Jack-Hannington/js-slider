@@ -1,0 +1,35 @@
+* {
+    outline: 1px solid red;
+  }
+  
+  .awo-reviews-slider {
+    width:400px;
+    height:300px;
+    margin:auto;
+    position: relative;
+  }
+  
+  
+
+  .hide {
+      display: none;
+  }
+  .current {
+    display: block;
+  }
+
+
+  .awo-review-slide {
+    height:100%;
+    width:100%;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.5s;
+    transform: translateX(-100%);
+  }
+  
+  .awo-review-slide.current {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
